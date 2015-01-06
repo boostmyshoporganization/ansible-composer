@@ -1,0 +1,11 @@
+---
+
+- shell: composer --version
+  register: composer_version
+  ignore_errors: True
+  no_log: True
+  tags: composer
+
+- include: composer.yml
+  when: composer_version|failed
+  tags: composer

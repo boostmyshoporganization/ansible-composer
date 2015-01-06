@@ -1,0 +1,13 @@
+---
+
+- name: Install composer
+  shell: curl -sS https://getcomposer.org/installer | php
+  tags: composer
+
+- name: Rename composer.phar to composer
+  shell: mv composer.phar /usr/bin/composer
+  tags: composer
+
+- name: Make composer executable
+  shell: chmod a+x /usr/bin/composer
+  tags: composer
